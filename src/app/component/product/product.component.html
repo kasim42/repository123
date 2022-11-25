@@ -1,0 +1,71 @@
+<div class="card-top container-fluid" id="card-top">
+    <div class="container d-flex">
+        <div class="item" id="item">
+
+            <a (click)="filter('')">
+                <!-- <img src="https://images.pexels.com/photos/5650016/pexels-photo-5650016.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""> -->
+                <h6>All Products</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('clothing')">
+                <!--img src="https://pixelbrewco.com/img/fashion_1.jpg" alt=""-->
+                <h6>Clothing</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('footwear')">
+                <!--img src="https://cdn2.vectorstock.com/i/1000x1000/86/11/design-shoes-logo-vector-23478611.jpg" alt=""-->
+                <h6>Footwear</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('beauty')">
+                <!--img src="https://static.vecteezy.com/system/resources/previews/000/403/514/original/pink-beauty-store-logo-cosmetics-vector.jpg" alt=""-->
+                <h6>Beauty</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('electronics')">
+                <!--img src="https://logopond.com/logos/5f7f8ccf2b7a7189bbaf491e18f5fe34.png" alt=""-->
+                <h6>Electronics</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('home & kitchen')">
+                <!--img src="https://thumb9.shutterstock.com/display_pic_with_logo/90084/404199478/stock-vector-home-kitchen-logo-404199478.jpg" alt=""-->
+                <h6>Home & Kitchen</h6>
+            </a>
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="item">
+            <a (click)="filter('books')">
+                <!--img src="https://openclipart.org/image/2400px/svg_to_png/275692/1489798288.png" alt=""-->
+                <h6>Books</h6>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let item of filterCategory | filter:searchKey: 'title'">
+                <div class="card col-md-3" id="card-img">
+                    <img src="{{item.image}}" alt="">
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch">{{item.title}}</h5>
+                    <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch">{{item.description}}</p>
+                    <p><strong>Price</strong></p>
+                    <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+                </div>
+
+
+
+            </ng-container>
+        </div>
+    </div>
